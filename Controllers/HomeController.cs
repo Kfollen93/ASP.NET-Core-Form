@@ -58,6 +58,7 @@ namespace FormTemplateProject.Controllers
                 }
             }
 
+            ModelState.Clear();
             return View(myVm);
         }
 
