@@ -174,3 +174,7 @@ body {
     /* padding-left: 25px; for mobile*/
     margin-left: -25px;
 }
+
+.set-margin {
+    margin-left: 0px;
+}
