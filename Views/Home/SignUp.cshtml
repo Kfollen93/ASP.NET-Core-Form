@@ -1,0 +1,67 @@
+﻿@model FormTemplateProject.Models.ViewModels.FormSubmissionMessageVM
+
+@{
+    ViewData["Title"] = "Demo";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h1 class="inline"><img id="img-logo-padding" src="~/images/CompanyPlaceholder.svg" /></h1> <div class="headers-font small-caps inline" id="pad-small-caps">LOREM IPSUM SLOGAN.</div>
+        <img class="container-pic" src="~/images/unsplashplantnew.png" alt="hero image" style="width: 100%; height:100%" />
+        <p class="centered-pic-text headers-font">
+            Adipiscing: <br />
+            Lorem ipsum <br />
+            Dolore magna <br />
+            Exercitation <br />
+            Cupidatat.
+        </p>
+    </div>
+    <div class="col-md-6" id="padding">
+        @if (Model.Status)
+        {
+            <div class="alert alert-@(Model.Status ? "success" : "danger") alert-dismissible fade show" role="alert">
+                @Model.FormMessage
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        }
+
+        <div class="connect-text">
+            Connect with one of our <br />
+            experts to learn more!
+        </div>
+        <div class="form body-font small-caps">
+            <form asp-action="SignUp">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="@Model.RegisteredUser.Name" class="control-label"></label>
+                    <input asp-for="@Model.RegisteredUser.Name" class="form-control" />
+                    <span asp-validation-for="@Model.RegisteredUser.Name" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.RegisteredUser.EmailAddress" class="control-label"></label>
+                    <input asp-for="@Model.RegisteredUser.EmailAddress" class="form-control" />
+                    <span asp-validation-for="@Model.RegisteredUser.EmailAddress" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.RegisteredUser.PhoneNumber" class="control-label"></label>
+                    <input asp-for="@Model.RegisteredUser.PhoneNumber" class="form-control" />
+                    <span asp-validation-for="@Model.RegisteredUser.PhoneNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="@Model.RegisteredUser.Industry" class="control-label"></label>
+                    <input asp-for="@Model.RegisteredUser.Industry" class="form-control" />
+                    <span asp-validation-for="@Model.RegisteredUser.Industry" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button type="submit" value="Create" class="btn btn-primary btn-lg btn-block border-btn-round">SEND AWAY!</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
