@@ -1,4 +1,8 @@
 # ASP.NET Core (MVC) Form Template
+<img src="https://github.com/Kfollen93/ASP.NET-Core-Form/blob/master/ReadmeImgs/FormSubmission.gif" width="900" height="720"/>
+
+### Database Output
+<img src="https://github.com/Kfollen93/ASP.NET-Core-Form/blob/master/ReadmeImgs/Database.png" alt="Database Image">
 
 ## Description
 I have created a template webpage that includes a form being submitted to a Microsoft SQL Server (Express) database. The form input is validated server side when being submitted, and I have also included frontend validation with messages for the user. Additionally, this webpage was made to be responsive and work on both desktop and mobile devices. <br>
