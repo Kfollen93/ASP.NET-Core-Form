@@ -21,6 +21,7 @@ namespace FormTemplateProject.Controllers
             return View();
         }
 
+        [HttpGet]
         public ActionResult SignUp()
         {
             var vm = new FormSubmissionMessageVM();
